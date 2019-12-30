@@ -1,0 +1,19 @@
+{
+  "name": "popsugar-book-tracker",
+  "version": "1.0.0",
+  "description": "Project 2 — 2020 Popsugar Book Tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adri-grace/popsugar-book-tracker.git"
+  },
+  "author": "Adrienne Grace",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adri-grace/popsugar-book-tracker/issues"
+  },
+  "homepage": "https://github.com/adri-grace/popsugar-book-tracker#readme"
+}
