@@ -1,11 +1,12 @@
 const express = require('express');
 const port = 3000;
 const morgan = require('morgan');
-/* const methodOverride = require('method-override');
+const methodOverride = require('method-override');
 const session = require('express-session');
-const passport = require('passport'); */
+const passport = require('passport');
 
 require('./config/database');
+require('./config/passport');
 require('dotenv').config();
 
 const app = express();
@@ -17,10 +18,17 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 app.use(morgan('dev'));
-/* app.use(methodOverride('_method')); */
+app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', indexRouter);
+
+app.use(session({
+    secret: 'keyboard cat',
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.listen(port, () => {
     console.log(`Express is listening on port:${port}`);
