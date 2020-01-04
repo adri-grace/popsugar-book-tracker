@@ -24,7 +24,6 @@ router.get('/logout', function (req, res) {
     res.redirect('/');
 });
 function ensureAuthenticated(req, res, next) {
-    console.log('hello world');
     if (req.isAuthenticated()) { return next(); }
     res.redirect('/login')
 }

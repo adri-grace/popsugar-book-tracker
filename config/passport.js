@@ -11,11 +11,6 @@ passport.use(new GoodreadsStrategy({
     callbackURL: "http://localhost:3000/auth/goodreads/callback"
 },
     function (token, tokenSecret, profile, done) {
-        console.log(token);
-        console.log(tokenSecret);
-        /* console.log(profile); */
-        //return done('asdf', {displayName: 'Adrienne Grace'});
-        // console.log(user);
         User.findOne({ goodreadsId: profile.id }, function (err, user) {
             console.log(user);
             // return done(err, user);
@@ -24,7 +19,7 @@ passport.use(new GoodreadsStrategy({
                 return done(null, user);
             } else {
                 const newUser = new User({
-                    name: profile.displayName,
+                    displayName: profile.displayName,
                     goodreadsId: profile.id,
                 });
                 newUser.save(function (err) {
@@ -33,6 +28,7 @@ passport.use(new GoodreadsStrategy({
                 })
             }
         });
+        console.log(profile);
     }
 ));
 
