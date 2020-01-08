@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<div class="row">
+    <form id="new-form" action="/books" method="POST">
+        <label>Title:</label>
+        <input type="text" name="title">
+        <label>Author:</label>
+        <input type="text" name="author">
+        <label>Rating</label>
+        <select name="rating">
+            <option value="1"><span class="icon">★</span></option>
+            <option value="2"><span class="icon">★★</span></option>
+            <option value="3"><span class="icon">★★★</span></option>
+            <option value="4"><span class="icon">★★★★</span></option>
+            <option value="5"><span class="icon">★★★★★</span></option>
+        </select>
+    </form>
+</div>
+<%- include('../partials/footer') %>   

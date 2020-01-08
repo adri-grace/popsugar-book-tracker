@@ -14,6 +14,7 @@ require('dotenv').config();
 const app = express();
 
 const indexRouter = require('./routes/index');
+const booksRouter = require('./routes/books');
 
 app.set('view engine', 'ejs');
 
@@ -39,6 +40,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/', indexRouter);
+app.use('/books', booksRouter);
 
 app.listen(port, () => {
     console.log(`Express is listening on port:${port}`);
