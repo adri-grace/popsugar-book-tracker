@@ -46,7 +46,7 @@ const categorySchema = new Schema({
     title20Twenty: Boolean,
     visionImpairedCharacter: Boolean,
     inJapan: Boolean,
-    in20s: Boolean,
+    setIn20s: Boolean,
     authorWrittenMoreThan20: Boolean,
     titleMoreThan20Letters: Boolean,
     published20thCentury: Boolean,

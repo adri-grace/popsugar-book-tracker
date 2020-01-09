@@ -1,3 +1,10 @@
+.gray {
+    background-color: #e6e6e6;
+}
+
+input {
+    margin: .4rem;
+}
 .rating {
   display: inline-block;
   position: relative;
