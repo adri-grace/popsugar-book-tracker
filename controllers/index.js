@@ -8,6 +8,6 @@ module.exports = {
 } */
 function index(req, res) {
     Book.find({}, function(err, books) {
-        res.render('index', {title: 'My Books', books})
+        res.render('/', {title: 'My Books', books})
     });
 }

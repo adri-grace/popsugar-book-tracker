@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-
+<h2><%= title %></h2>
 <form id="new-form" action="/books" method="POST">
     <div class="d-flex flex-row flex-wrap">
         <div class="col-xs-12">
@@ -129,7 +129,6 @@
             
         </fieldset><!-- end row -->
 
-    <!-- <div col-xs-12 class="mb-4">
     <label for="rating">Rating</label><br/>
     <select name="rating" id="rating">
         <option value="1"><span class="icon">★</span></option>
@@ -138,8 +137,8 @@
         <option value="4"><span class="icon">★★★★</span></option>
         <option value="5"><span class="icon">★★★★★</span></option>
     </select>
-</div> -->
-    <div class="rating">
+
+    <!-- <div class="rating">
         <fieldset>
             <legend>Rate &amp; Review</legend>
             <label>
@@ -173,10 +172,10 @@
                 <span class="icon">★</span>
             </label>
         </fieldset>
-    </div><!-- end rating-->
+    </div> -->
     <div col-xs-12 class="mb-4">
-        <label for="review">Review</label><br />
-        <textarea name="review" id="review" cols="100" rows="10"></textarea>
+        <label for="content">Review</label><br />
+        <textarea name="content" id="content" cols="100" rows="10"></textarea>
     </div>
     <div col-xs-12 class="mb-4">
         <input type="submit" value="Add Book">
