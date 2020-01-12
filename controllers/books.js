@@ -11,7 +11,6 @@ module.exports = {
 
 function index(req, res) {
     User.findById(req.user._id).populate('book').exec(function (err, user) {
-        console.log(user);
         res.render('books/index', { user });
     });
 }
@@ -41,6 +40,7 @@ function create (req, res) {
         bookCategory={genre: category};
     const newBook = new Book(book); // this is called 'casting'
     newBook.reviews.push(bookReview);
+    console.log(bookCategory);
         Category.findOne({genre:bookCategory.genre}, function(err, category){
             if (category) {
                 newBook.category.push(category._id)
