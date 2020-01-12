@@ -6,6 +6,7 @@ router.get('/new', ensureAuthenticated, booksCtrl.new);
 router.get('/new', booksCtrl.new);
 router.post('/', booksCtrl.create);
 router.get('/', booksCtrl.index);
+router.delete('/:id', booksCtrl.deleteBook);
 
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }

@@ -5,9 +5,19 @@ const User = require('../models/user');
 module.exports = {
     new: newBook,
     create,
-    index
+    index,
+    deleteBook
 };
 
+function deleteBook(req, res) {
+    console.log(req.params.id);
+    const user = User.findById(req.user._id, function (err, user) {
+        user.book.remove(req.params.id);
+        user.save(function (err) {
+            res.redirect('/books');
+        });
+    });
+}
 
 function index(req, res) {
     User.findById(req.user._id).populate('book').exec(function (err, user) {
@@ -41,12 +51,12 @@ function create (req, res) {
     const newBook = new Book(book); // this is called 'casting'
     newBook.reviews.push(bookReview);
     console.log(bookCategory);
-        Category.findOne({genre:bookCategory.genre}, function(err, category){
+        Category.findOne({genre: bookCategory}, function(err, category){
             if (category) {
-                newBook.category.push(category._id)
+                newBook.category.push(bookCategory._id)
             } else if (!category) {
                 Category.create(bookCategory, function(err, category){
-                    newBook.category.push(category._id);
+                    newBook.category.push(bookCategory._id);
                 } )
             }
         })
@@ -58,11 +68,3 @@ function create (req, res) {
         })
     });
 }
-
-/* function show(req, res) {
-    Book.findById(req.params.id, function (err, book) {
-        bookReview.find({ book: book._id }, function (err, reviews) {
-            res.render('/', { title: 'Book details', book, review });
-        });
-    });
-} */

@@ -1,7 +1,7 @@
 <div class="row d-flex justify-content-between">
 <% user.book.forEach(function(b){ %>
 
-    <div class="card pa-3">
+    <div class="card pa-3 mb-4">
         <div class="card-body">
             <h5 class="card-title">
                 Title: <%= b.title %>
@@ -13,7 +13,10 @@
                     <p>Rating: <%= r.rating %></p>
                     <p>Review: <%= r.content %></p>
               <%  }); %>
-                
+        <a href="#" class="card-link">Edit</a>
+        <form action="/books/<%= b._id %>/?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
             </div>
         </div>
     </div>
