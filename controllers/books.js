@@ -35,9 +35,9 @@ function create (req, res) {
 // take same book document and reference the category
 // save book document again
 // redirect back to home page
-    const {title, author, review, content, category} = req.body;
+    const {title, author, review, content, rating, category} = req.body;
     let book = {title, author}, 
-        bookReview={review, content}, 
+        bookReview={review, content, rating}, 
         bookCategory={title: category};
     const newBook = new Book(book); // this is called 'casting'
     newBook.reviews.push(bookReview);
