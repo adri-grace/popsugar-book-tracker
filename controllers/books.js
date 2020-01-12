@@ -6,9 +6,21 @@ module.exports = {
     new: newBook,
     create,
     index,
-    deleteBook
+    deleteBook,
+    editBook
 };
 
+function editBook(req, res) {
+    Book.findById(req.params.id, function(err, book) {
+        res.render('books/edit', { title: 'Edit Book', book, user: req.user });
+    });
+    /* const user = User.findById(req.user._id, function (err, user) {
+        user.book.find(req.params.id, function (err, book) {
+            res.render('/books/edit', { title: 'Edit Book' })
+        }); 
+        console.log(req.params.id);
+    }); */
+}
 function deleteBook(req, res) {
     console.log(req.params.id);
     const user = User.findById(req.user._id, function (err, user) {
@@ -21,7 +33,7 @@ function deleteBook(req, res) {
 
 function index(req, res) {
     User.findById(req.user._id).populate('book').exec(function (err, user) {
-        res.render('books/index', { user });
+        res.render('books/index', { title: 'My books', user });
     });
 }
 
