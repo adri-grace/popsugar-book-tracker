@@ -38,10 +38,10 @@ function create (req, res) {
     const {title, author, review, content, rating, category} = req.body;
     let book = {title, author}, 
         bookReview={review, content, rating}, 
-        bookCategory={title: category};
+        bookCategory={genre: category};
     const newBook = new Book(book); // this is called 'casting'
     newBook.reviews.push(bookReview);
-        Category.findOne({title:bookCategory.title}, function(err, category){
+        Category.findOne({genre:bookCategory.genre}, function(err, category){
             if (category) {
                 newBook.category.push(category._id)
             } else if (!category) {
