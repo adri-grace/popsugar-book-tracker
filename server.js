@@ -8,9 +8,9 @@ const passport = require('passport');
 const cookieParser = require('cookie-parser');
 
 // Connect to DB, Passport, and set up .env
+require('dotenv').config();
 require('./config/database');
 require('./config/passport');
-require('dotenv').config();
 
 // Set up express app
 const app = express();

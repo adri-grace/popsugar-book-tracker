@@ -3,7 +3,7 @@
     <h2><%= title %></h2>
 </div>
 <div class="row d-flex justify-content-around">
-<% user.book.forEach(function(b){ %>
+<% books.forEach(function(b){ %>
 
     <div class="card pa-3 mb-4">
         <div class="card-body">
@@ -11,7 +11,7 @@
                 Title: <%= b.title %>
             </h5>
             <h6>Author: <%= b.author %></h6>
-            <p>Category: <%= b%></p>
+            <p>Category: <%= b %></p>
             <div class="card-text">
               <%  b.reviews.forEach(function(r) { %>
                     <p>Rating: <%= r.rating %></p>
