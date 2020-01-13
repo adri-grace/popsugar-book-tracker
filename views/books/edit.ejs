@@ -1,6 +1,18 @@
 <%- include('../partials/header') %>
-<h2><%= title %></h2>
-<div>
-    Stuff to go here
+<div class="row d-flex mb-5">
+
+    <h2><%= title %></h2>
+</div>
+<div class="row">
+    <h3>Title: <%= book.title %></h3><br/>
+    <h4>Author: <%= book.author %></h4><br/>
+    <h5>Category: <%= book.category %></h5><br/>
+
+    <% book.reviews.forEach(function(r) { %>
+    <p>Rating: <%= r.rating %></p>
+    <p>Review: <%= r.content %></p>
+    <%  }); %>
+</div>
+
 </div>
 <%- include('../partials/footer') %>

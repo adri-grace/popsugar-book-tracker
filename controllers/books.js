@@ -14,12 +14,6 @@ function editBook(req, res) {
     Book.findById(req.params.id, function(err, book) {
         res.render('books/edit', { title: 'Edit Book', book, user: req.user });
     });
-    /* const user = User.findById(req.user._id, function (err, user) {
-        user.book.find(req.params.id, function (err, book) {
-            res.render('/books/edit', { title: 'Edit Book' })
-        }); 
-        console.log(req.params.id);
-    }); */
 }
 function deleteBook(req, res) {
     console.log(req.params.id);
