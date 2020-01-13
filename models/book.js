@@ -17,7 +17,7 @@ const bookSchema = new Schema({
         required: true
     },
     reviews: [reviewSchema],
-    category: [{ type: Schema.Types.ObjectId, ref: 'Category'}],
+    category: { type: Schema.Types.ObjectId, ref: 'Category'},
 }, {
     timestamps: true
 });

@@ -7,9 +7,26 @@ module.exports = {
     create,
     index,
     deleteBook,
-    editBook
+    editBook,
+    update
 };
 
+function update(req, res) {
+    /* const user = User.findById(req.user._id, function (err, user) {
+       user.book.update(req.params.id);
+        user.save(function (err) {
+            res.redirect('/books');
+        }); 
+    }); */
+    let book = { title, author },
+        bookReview = { review, content, rating },
+        bookCategory = { genre: category };
+    Book.findByIdAndUpdate(req.params.id, { set: book, bookReview, bookCategory }, { new: true }, function (err, book) {
+        console.log(book.title);
+        console.log(bookCategory);
+        res.redirect('/books');
+    });
+}
 function editBook(req, res) {
     Book.findById(req.params.id, function(err, book) {
         res.render('books/edit', { title: 'Edit Book', book, user: req.user });
@@ -26,9 +43,13 @@ function deleteBook(req, res) {
 }
 
 function index(req, res) {
-    User.findById(req.user._id).populate('book').exec(function (err, user) {
+    /* User.findById(req.user._id).populate('book').exec(function (err, user) {
         res.render('books/index', { title: 'My books', user });
-    });
+    }); */
+    Book.find({'_id': {$in:req.user.book}} ).populate('category').exec(function(err, books) {
+        console.log(books);
+        res.render('books/index', { title: 'My books', user: req.user});
+    })
 }
 
 function newBook(req, res) {
@@ -59,10 +80,10 @@ function create (req, res) {
     console.log(bookCategory);
         Category.findOne({genre: bookCategory}, function(err, category){
             if (category) {
-                newBook.category.push(bookCategory._id)
+                newBook.category = bookCategory._id;
             } else if (!category) {
                 Category.create(bookCategory, function(err, category){
-                    newBook.category.push(bookCategory._id);
+                    newBook.category = bookCategory._id;
                 } )
             }
         })

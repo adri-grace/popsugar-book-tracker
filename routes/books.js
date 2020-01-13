@@ -8,6 +8,7 @@ router.post('/', booksCtrl.create);
 router.get('/', booksCtrl.index);
 router.delete('/:id', booksCtrl.deleteBook);
 router.get('/:id', booksCtrl.editBook);
+router.put('/:id/edit', booksCtrl.update);
 
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }
