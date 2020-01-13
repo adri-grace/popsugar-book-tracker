@@ -10,8 +10,6 @@ passport.use(new GoodreadsStrategy({
 },
     function (token, tokenSecret, profile, done) {
         User.findOne({ goodreadsId: profile.id }, function (err, user) {
-            console.log(user);
-            // return done(err, user);
             if (err) return done(err);
             if (user) {
                 return done(null, user);
@@ -31,7 +29,6 @@ passport.use(new GoodreadsStrategy({
 ));
 
 passport.serializeUser(function (user, done) {
-    console.log(user);
     done(null, user);
 });
 
