@@ -12,12 +12,17 @@ module.exports = {
 };
 
 function update(req, res) {
-    let book = { title, author },
-        bookReview = { review, content, rating },
-        bookCategory = { genre: category };
-    Book.findByIdAndUpdate(req.params.id, { set: book, bookReview, bookCategory }, { new: true }, function (err, book) {
-        res.redirect('/books');
-    });
+        /* let book = { title, author },
+            bookReview = { review, content, rating },
+            bookCategory = { genre: category }; */
+            Book.findById(req.params.id, function(err, book) {
+                book.title = req.body.title;
+                book.author = req.body.author;
+                book.save(function(err, book) {
+                    res.redirect('/books');
+                })
+            });
+
 }
 function editBook(req, res) {
     Book.findById(req.params.id).populate('category').exec(function (err, book) {
