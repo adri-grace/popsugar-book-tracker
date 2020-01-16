@@ -3,6 +3,13 @@
 }
 body {
   background-color: #ff8587;
+  font-family: 'Noto Sans JP', Helvetica, Arial, sans-serif;
+}
+h1, h2 {
+  font-family: 'Baloo Bhai', cursive;
+}
+strong {
+  font-weight: 700;;
 }
 main#landing {
   background: url('/images/reading-challeng-bkgd.svg') no-repeat;
@@ -10,36 +17,58 @@ main#landing {
   background-size: 100%;
   height: 100vh;
 }
-main#bookcards > div.container {
-  background: rgba(255, 255, 255, 0.8);
+@media (max-width:1079px) {
+  main#landing {
+    background-position: center center;
+    background-size: 150%;
+  }
 }
-/* 
-font-family: 'Noto Sans JP', sans-serif; */
+main#landing h1 {
+  color: #fff;
+  font-size: 1.4rem;
+}
+main#bookcards > div.container {
+  background: #fff;
+}
+main#newBook > div.container {
+  background: #fff;
+}
+
 nav {
   background: #ff8587;
   font-family: 'Baloo Bhai', cursive;
 }
 .navbar-brand {
   font-size: 1.15em;
-  color:#fff;
+  color: #000;
 }
 @media (min-width:600px) {
   .navbar-brand {
     font-size: 2em;
   }
 }
-.nav-item.nav-link {
-  color: #fff;
+.nav-link {
+  color: #000;
   font-size: 1.2em;
 }
-.navbar-brand:hover, .nav-item.nav-link:hover {
+.navbar-brand:hover, .nav-link:hover, .dropdown-item:hover {
   color: #fed349;
+}
+.dropdown-item:active {
+  background-color: #ededed;
 }
 .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 .btn-primary {
   background-color: #2aacff;
+  color:#000;
+  border: none;
+  padding: .4rem 2rem;
+}
+.btn-secondary {
+  border: none;
+  padding: .4rem 2rem;
 }
 .card {
   width:98%;
@@ -57,74 +86,24 @@ nav {
 .gray {
     background-color: #e6e6e6;
 }
+.card h2 {
+  font-size: 2em;
+}
+.card h3 {
+  font-size: 1.2em;
+}
+.bg-pop {
+  background-color: #2aacff;
+}
 fieldset {
   min-width: 95%;
 }
 input {
     margin: .4rem;
 }
-.rating {
-  display: inline-block;
-  position: relative;
-  height: 50px;
-  line-height: 50px;
-  font-size: 50px;
+textarea {
+  min-width: 95%;
 }
-
-.rating label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  cursor: pointer;
-}
-
-.rating label:last-child {
-  position: static;
-}
-
-.rating label:nth-child(1) {
-  z-index: 5;
-}
-
-.rating label:nth-child(2) {
-  z-index: 4;
-}
-
-.rating label:nth-child(3) {
-  z-index: 3;
-}
-
-.rating label:nth-child(4) {
-  z-index: 2;
-}
-
-.rating label:nth-child(5) {
-  z-index: 1;
-}
-
-.rating label input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-
-.rating label .icon {
-  float: left;
-  color: transparent;
-}
-
-.rating label:last-child .icon {
-  color: #000;
-}
-
-.rating:not(:hover) label input:checked ~ .icon,
-.rating:hover label:hover input ~ .icon {
-  color: #09f;
-}
-
-.rating label input:focus:not(:checked) ~ .icon:last-child {
-  color: #000;
-  text-shadow: 0 0 5px #09f;
+label[for="rating"] {
+  display: none;
 }
