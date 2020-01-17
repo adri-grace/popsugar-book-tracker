@@ -1,35 +1,33 @@
 <main id="bookcards">
 <div class="container py-5">
-<div class="row mb-5">
+<div class="row mb-5 ">
 <div class="col-12">
-    <h2><%= title %></h2>
-</div>
-<div class="col-12">
-    <p>ID: <%= user.goodreadsId %></p>
-    <p>Name: <%= user.displayName %></p>
+    <h1 class="text-center"><%= title %></h1>
 </div>
 </div>
-<div class="row d-flex justify-content-around">
+<div class="row d-flex justify-content-around align-items-stretch">
 <% books.forEach(function(b){ %>
-
-    <div class="card pa-3 mb-4">
+    <div class="card">
+        <div class="card-header bg-pop">
+            <h2 class="card-title">
+                <%= b.title %>
+            </h2>
+            <h3>by <%= b.author %></h3>
+            <p><a href="/books/<%= b._id %>" class="btn btn-secondary mt-3">Edit</a></p>
+        </div>
         <div class="card-body">
-            <h5 class="card-title">
-                Title: <%= b.title %>
-            </h5>
-            <h6>Author: <%= b.author %></h6>
-            <p><a href="/books/<%= b._id %>" class="btn btn-light">Edit</a></p>
-            <hr>
             <div class="card-text">
-                <p>Category: <%= b.category.genre %></p>
+                <p><strong>Category:</strong> <%= b.category.genre %></p>
               <%  b.reviews.forEach(function(r) { %>
-                    <p>Rating: <%= r.rating %></p>
-                    <p>Review: <%= r.content %></p>
+                    <p><strong>Rating:</strong> <%= r.rating %></p>
+                    <p><strong>Review:</strong> <%= r.content %></p>
               <%  }); %>
-        <form action="/books/<%= b._id %>/?_method=DELETE" method="POST">
-            <button type="submit" class="btn btn-secondary">Delete Book</button>
-        </form>
             </div>
+        </div>
+        <div class="card-footer">
+            <form action="/books/<%= b._id %>/?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-primary">Delete Book</button>
+            </form>
         </div>
     </div>
 <% }); %>
