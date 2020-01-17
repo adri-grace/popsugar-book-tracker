@@ -4,12 +4,7 @@ const passport = require('passport');
 router.get('/', function (req, res) {
     res.render('index', { user: req.user });
 });
-/* router.get('/login', function (req, res) {
-    res.render('login', { user: req.user });
-});
- router.get('/account', ensureAuthenticated, function (req, res) {
-    res.render('account', { user: req.user });
-}); */
+
 router.get('/auth/goodreads',
     passport.authenticate('goodreads'));
 
@@ -23,8 +18,19 @@ router.get('/logout', function (req, res) {
     req.logout();
     res.redirect('/');
 });
-/* function ensureAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) { return next(); }
-    res.redirect('/login')
-} */
+
+
+router.get('/auth/google', passport.authenticate(
+    'google',
+    { scope: ['profile', 'email'] }
+));
+
+router.get('/oauth2callback', passport.authenticate(
+    'google',
+    {
+        successRedirect: '/books',
+        failureRedirect: '/'
+    }
+));
+
 module.exports = router;
