@@ -1,31 +1,30 @@
 <%- include('../partials/header') %>
-    <main id="bookcards">
+    <main id="edit">
     <div class="container py-5">
         <div class="flex-row d-flex justify-content-center mb-5 pa-4">
         
-            <h2><%= title %></h2>
+            <h1><%= title %></h1>
         </div>
 <div class="flex-row d-flex justify-content-center mb-5 pa-4">
     <div class="card pa-3 mb-4">
+        <form id="edit-book" action="/books/<%= book._id %>/edit?_method=PUT" method="POST">
         <div class="card-body">
-
-    <form id="edit-book" action="/books/<%= book._id %>/edit?_method=PUT" method="POST">
-    <fieldset>
-        <legend>Book</legend>
-        <div>
+   
+        <div class="form-group mb-4">
             <label for="title">Update title:</label><br />
-            <input type="text" name="title" id="title" value="<%= book.title %>">
+            <input class="form-control" type="text" name="title" id="title" value="<%= book.title %>">
         </div>
-        <div>
+        <div class="form-group">
             <label for="author">Update author:</label><br />
-            <input type="text" name="author" id="author" value="<%= book.author %>">
+            <input class="form-control" type="text" name="author" id="author" value="<%= book.author %>">
         </div>
-    </fieldset>
-    <div col-xs-12 class="mb-4">
-        <input type="submit" value="Update Book">
-    </div>
-    </form>
             </div><!-- end card-body -->
+            <div class="card-footer">
+                    <div col-xs-12>
+                        <button type="submit" class="btn btn-primary">Update Book</button>
+                    </div>
+            </div>
+            </form>
             </div><!-- end card-->
 </div><!-- end row-->
 </div><!-- end container -->
