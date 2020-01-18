@@ -22,15 +22,251 @@
                     <input type="text" name="author" id="author" class="form-control" aria-describedby="Author" value="<%= book.author %>">
                 </div>
             </fieldset>
-   
-        <!-- <div class="form-group mb-4">
-            <label for="title">Update title:</label><br />
-            <input class="form-control" type="text" name="title" id="title" value="<%= book.title %>">
+<!-- <fieldset class="d-flex flex-row flex-wrap">
+    <legend class="mb-3">Category</legend>
+    <p><strong>Current category:</strong> <%= book.category.genre %></p>
+    <div class="d-flex flex-row flex-wrap">
+        <div class="col-xs-12 col-md-6 mb-3">
+            <div class="form-group">
+                <label for="published2020" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book published in 2020" id="published2020"
+                        aria-describedby="A book published in 2020">A book published in 2020</label>
+            </div>
+            <div class="form-group"><label for="transAuthor" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" value="A book by a trans or nonbinary author" id="transAuthor">A
+                    book by a trans or
+                    nonbinary author</label></div>
+            <div class="form-group">
+                <label for="greatFirstLine" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book with a great first line" id="greatFirstLine">A book with a great
+                    first
+                    line</label>
+            </div>
+            <div class="form-group">
+                <label for="aboutBookClub" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book about a book club" id="aboutBookClub">A book about a book
+                    club</label>
+            </div>
+            <div class="form-group">
+                <label for="olympicCity" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book set in a city that has hosted the Olympics" id="olympicCity">A
+                    book
+                    set in a city that has hosted the Olympics</label>
+            </div>
+            <div class="form-group">
+                <label for="bildungsroman" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value=" Abildungsroman" id="bildungsroman">A bildungsroman</label>
+            </div>
+            <div class="form-group">
+                <label for="eyesClosed" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="The first book you touch on a shelf with your eyes closed"
+                        id="eyesClosed">The first book you touch on a shelf with your eyes closed</label>
+            </div>
+            <div class="form-group">
+                <label for="upsideDownImage" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="upsideDownImage" id="A book with an upside-down image on the cover">A
+                    book
+                    with an upside-down image on the cover</label>
+            </div>
+            <div class="form-group"><label for="withMap" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" value="A book with a map" id="withMap">A book with a map</label>
+            </div>
+            <div class="form-group"><label for="onlineRecommendation" class="form-check-label"> <input type="radio"
+                        name="category"
+                        value="A book recommended by your favorite blog, vlog, podcast, or online book club"
+                        id="onlineRecommendation">A book recommended by your favorite blog, vlog, podcast,
+                    or online book club</label></div>
+            <div class="form-group">
+                <label for="anthology" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="An anthology" id="anthology">An anthology</label>
+            </div>
+            <div class="form-group">
+                <label for="passesBechdel" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book that passes the Bechdel test" id="passesBechdel">A book that
+                    passes
+                    the Bechdel test</label>
+            </div>
+            <div class="form-group">
+                <label for="sameTitleUnrelated" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book with the same title as a movie or TV show, but is unrelated"
+                        id="sameTitleUnrelated">A book with the same title as a movie or TV show, but is
+                    unrelated</label>
+            </div>
+            <div class="form-group">
+                <label for="floraFaunaAuthorName" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book by an author with flora or fauna in their name"
+                        id="floraFaunaAuthorName">A book by an author with flora or fauna in their
+                    name</label>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="author">Update author:</label><br />
-            <input class="form-control" type="text" name="author" id="author" value="<%= book.author %>">
-        </div> -->
+        <div class="col-xs-12 col-md-6 mb-3">
+            <div class="form-group">
+                <label for="involvingSocialMedia" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book about or involving social media" id="involvingSocialMedia">A book
+                    about or involving social media</label>
+            </div>
+            <div class="form-group"><label for="bookOnCover" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" value="A book that has a book on the cover" id="bookOnCover">A book
+                    that has a book
+                    on the cover</label></div>
+            <div class="form-group">
+                <label for="medicalThriller" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A medical thriller" id="medicalThriller">A medical thriller</label>
+            </div>
+            <div class="form-group">
+                <label for="madeupLanguage" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book with a made-up language" id="madeupLanguage">A book with a made-up
+                    language</label>
+            </div>
+            <div class="form-group">
+                <label for="countryStartsWithC" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="countryStartsWithC" id="A book set in a country beginning with 'C' ">A
+                    book
+                    set in a country beginning with "C"</label>
+            </div>
+            <div class="form-group"><label for="titleCaughtAttention" class="form-check-label"><input
+                        class="form-check-label" type="radio" name="category" value="titleCaughtAttention"
+                        id="A book you picked up because the title caught your attention">A book you picked
+                    up because the title caught your attention</label></div>
+            <div class="form-group">
+                <label for="publishedBirthMonth" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book published the month of your birthday" id="publishedBirthMonth">A
+                    book published the month of your birthday</label>
+            </div>
+            <div class="form-group"><label for="womanInStem" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" value="A book about or by a woman in STEM" id="womanInStem">A book
+                    about or by a
+                    woman in STEM</label></div>
+            <div class="form-group"><label for="award2019" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" value="A book that won an award in 2019" id="award2019">A book that
+                    won an award in
+                    2019</label></div>
+            <div class="form-group"><label for="unknownSubject" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" value="A book on a subject you know nothing about"
+                        id="unknownSubject">A book on a
+                    subject you know nothing about</label></div>
+            <div class="form-group">
+                <label for="coverOnlyWords" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book with only words on the cover, no images or graphics"
+                        id="coverOnlyWords">A book with only words on the cover, no images or
+                    graphics</label>
+            </div>
+            <div class="form-group">
+                <label for="titlePun" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book with a pun in the title" id="titlePun">A book with a pun in the
+                    title</label>
+            </div>
+            <div class="form-group"><label for="featuresSin" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" value="A book featuring one of the seven deadly sins"
+                        id="featuresSin">A book
+                    featuring one of the seven deadly sins</label></div>
+            <div class="form-group">
+                <label for="artificialCharacter" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book with a robot, cyborg, or AI character" id="artificialCharacter">A
+                    book with a robot, cyborg, or AI character</label>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6 mb-3">
+            <div class="form-group">
+                <label for="birdCover" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A book with a bird on the cover" id="birdCover">A book with a bird on the
+                    cover</label>
+            </div>
+            <div class="form-group">
+                <label for="aboutWorldLeader" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" value="A fiction or nonfiction book about a world leader"
+                        id="aboutWorldLeader">A
+                    fiction or nonfiction book about a world leader</label>
+            </div>
+            <div class="form-group">
+                <label for="goldSilverBronze" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" id="goldSilverBronze"
+                        value="A book with 'gold,' 'silver, or 'bronze' in the title">A book with "gold,"
+                    "silver," or "bronze" in the title</label>
+            </div>
+            <div class="form-group">
+                <label for="authorWomanOfColor" class="form-check-label"><input class="form-check-label" type="radio"
+                        name="category" id="authorWomanOfColor" value="A book by a WOC">A book by a WOC</label>
+            </div>
+            <div class="form-group"><label for="goodreadsFourStar" class="form-check-label"><input
+                        class="form-check-label" type="radio" name="category" id="goodreadsFourStar"
+                        value="A book with at least a 4-star rating on Goodreads">A
+                    book with at least a 4-star rating on Goodreads</label></div>
+            <div class="form-group"><label for="meantToRead2019" class="form-check-label"><input
+                        class="form-check-label" type="radio" name="category" id="meantToRead2019"
+                        value="A book you meant to read in 2019">A book you meant to
+                    read in 2019</label></div>
+            <div class="form-group"><label for="threeWordTitle" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" id="threeWordTitle" value="A book with a 3-word title">A book with
+                    a 3-word
+                    title</label></div>
+            <div class="form-group"><label for="pinkCover" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" id="pinkCover" value="A book with a pink cover">A book with a pink
+                    cover</label>
+            </div>
+            <div class="form-group"><label for="western" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" id="western" value="A Western">A Western</label></div>
+            <div class="form-group"><label for="byAboutJournalist" class="form-check-label"><input
+                        class="form-check-label" type="radio" name="category" id="byAboutJournalist"
+                        value="A book by or about a journalist">A book by or about a
+                    journalist</label></div>
+            <div class="form-group"><label for="banned" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" id="banned" value="A banned book">Read a banned book during Banned
+                    Books
+                    Week</label></div>
+            <div class="form-group"><label for="favPrompt" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" id="favPrompt"
+                        value="Your favorite prompt from a past POPSUGAR Reading Challenge">Your favorite
+                    prompt from a past POPSUGAR Reading Challenge</label></div>
+        </div>
+        <div class="col-xs-12 col-md-6 mb-3 px-4 py-4 gray">
+            <h5>Advanced</h5>
+            <div class="form-group"><label for="authorIn20s" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" id="authorIn20s" value="A book written by an author in their 20s">A
+                    book written by
+                    an author in their 20s</label></div>
+            <div class="form-group"><label for="title20Twenty" class="form-check-label"><input class="form-check-label"
+                        class="form-check-label" type="radio" name="category" id="title20Twenty"
+                        value="A book with '20' or 'twenty' in the title">A book with
+                    "20" or "twenty" in the title</label></div>
+            <div class="form-group"><label for="visionImpairedCharacter" class="form-check-label"><input
+                        class="form-check-label" class="form-check-label" type="radio" name="category"
+                        id="visionImpairedCharacter"
+                        value="A book with a character with a vision impairment or enhancement (a nod to 20/20 vision)">A
+                    book with a character with a vision impairment or enhancement (a nod to 20/20
+                    vision)</label></div>
+            <div class="form-group"><label for="inJapan" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" id="inJapan"
+                        value="A book set in Japan, host of the 2020 Olympics">A book set in
+                    Japan, host of the 2020 Olympics</label></div>
+            <div class="form-group"><label for="setIn20s" class="form-check-label"><input type="radio" name="category"
+                        id="setIn20s" value="A book set in the 1920s">A book set in the 1920s</label></div>
+            <div class="form-group"><label for="authorWrittenMoreThan20" class="form-check-label"><input
+                        class="form-check-label" type="radio" name="category" id="authorWrittenMoreThan20"
+                        value="A book written by an author who has written more than 20 books">A book
+                    written by an author who has written more than 20 books</label></div>
+            <div class="form-group"><label for="titleMoreThan20Letters" class="form-check-label"><input
+                        class="form-check-label" type="radio" name="category"
+                        value="A book with more than 20 letters in its title" id="titleMoreThan20Letters">A book with
+                    more than 20 letters in its title</label>
+            </div>
+            <div class="form-group"><label for="published20thCentury" class="form-check-label"><input
+                        class="form-check-label" type="radio" name="category" id="published20thCentury"
+                        value="A book published in the 20th century">A book published in the 20th
+                    century</label></div>
+            <div class="form-group"><label for="seriesMoreThan20" class="form-check-label"><input
+                        class="form-check-label" type="radio" name="category" id="seriesMoreThan20"
+                        value="A book from a series with more than 20 books">A book from a series with more
+                    than 20 books</label></div>
+            <div class="form-group"><label for="characterIn20s" class="form-check-label"><input class="form-check-label"
+                        type="radio" name="category" id="characterIn20s"
+                        value="A book with a main character in their 20s">A book with a main character in
+                    their 20s</label></div>
+        </div>
+
+</fieldset> -->
+    
+   
         <fieldset>
             <legend>Rate &amp; Review</legend>
             <div class="mb-4 form-group">
