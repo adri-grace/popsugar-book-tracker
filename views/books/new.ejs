@@ -2,8 +2,10 @@
 <main id="newBook">
     <div class="container py-5">
         <div class="flex-row d-flex justify-content-center mb-5 pa-4">
-
-            <h1><%= title %></h1>
+            <div class="col-12">
+                <p class="text-center"><img src="/images/book-tracker-logo.svg" alt="book logo" width="100px" height="100px"></p>
+                <h1 class="text-center"><%= title %></h1>
+            </div>
         </div>
         <form id="new-book" action="/books" method="POST">
                 <fieldset class="flex-row d-flex flex-wrap pb-5">
@@ -18,7 +20,7 @@
                     </div>
                 </fieldset>
             <fieldset class="d-flex flex-row flex-wrap">
-                <legend>Category</legend>
+                <legend class="mb-3">Category</legend>
                 <div class="d-flex flex-row flex-wrap">
                     <div class="col-xs-12 col-md-6 mb-3">
                         <div class="form-group">
@@ -96,7 +98,7 @@
                         <div class="form-group"><label for="bookOnCover" class="form-check-label"><input class="form-check-label" type="radio" name="category"
                                     value="A book that has a book on the cover" id="bookOnCover">A book that has a book
                                 on the cover</label></div>
-                        <div>
+                        <div class="form-group">
                             <label for="medicalThriller" class="form-check-label"><input class="form-check-label" type="radio" name="category"
                                     value="A medical thriller" id="medicalThriller">A medical thriller</label>
                         </div>

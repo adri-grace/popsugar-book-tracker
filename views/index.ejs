@@ -3,19 +3,25 @@
         <div class="container py-5">
     <% if (!user) { %>
         <div class="row mb-4 justify-content-center">
-            <div class="col-12 mb-4">
-                <h1 class="text-center">Please log in.</h1>
-            </div>
             <div class="col-12">
-                <p class="text-center"><a class="btn btn-primary btn-lg mx-auto" href="/auth/goodreads" role="button">Goodreads</a></p>
+                <h1 class="text-center">Please log in.</h1>
+            </div> 
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xs-12 col-md-3">
+                <p class="text-center"><a class="btn btn-primary btn-lg mx-auto" href="/auth/goodreads" role="button">Goodreads</a>
+                </p>
+            </div>
+            <div class="col-xs-12 col-md-3">
                 <p class="text-center"><a class="btn btn-primary btn-lg mx-auto" href="/auth/google" role="button">Google</a></p>
             </div>
-            
         </div>
             <% } else { %>
                 <div class="row mb-4 justify-content-center">
-                    <h2>Hello, <%= user.displayName %>.</h2>
-                    <a href="/books">See All Your Books</a>
+                    <div class="col-12">
+                        <h2 class="text-center mb-4">Hello, <%= user.displayName %>.</h2>
+                        <p class="text-center"><a class="btn btn-primary btn-lg mx-auto" href="/books">See All Your Books</a></p>
+                    </div>
                 </div>
         </div>
 
