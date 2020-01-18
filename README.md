@@ -25,4 +25,4 @@ A website for users to track what books they read for 2020 and identify which ca
 – A user who wants to track which books and categories they've read.
 
 #### Screen Captures
-![Popsugar landing page](/screen-captures/PS-ladning-pg.png?raw=true "Popsugar landing page")
+![Popsugar landing page](/screen-captures/PS-landing-pg.png?raw=true "Popsugar landing page")
