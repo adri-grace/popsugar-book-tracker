@@ -15,6 +15,9 @@ function update(req, res) {
           Book.findById(req.params.id, function(err, book) {
                 book.title = req.body.title;
                 book.author = req.body.author;
+                book.reviews[0].rating = req.body.rating;
+                book.reviews[0].content = req.body.content;
+                console.log(req.body);
                 book.save(function(err, book) {
                     res.redirect('/books');
                 })

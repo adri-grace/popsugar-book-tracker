@@ -11,20 +11,52 @@
     <div class="card pa-3 mb-4">
         <form id="edit-book" action="/books/<%= book._id %>/edit?_method=PUT" method="POST">
         <div class="card-body">
+            <fieldset class="flex-row d-flex flex-wrap pb-5">
+                <legend>Book</legend>
+                <div class="form-group">
+                    <label for="title">Update title:</label><br />
+                    <input type="text" name="title" id="title" aria-describedby="Book title" class="form-control" value="<%= book.title %>">
+                </div>
+                <div class="form-group">
+                    <label for="author">Updated Author:</label><br />
+                    <input type="text" name="author" id="author" class="form-control" aria-describedby="Author" value="<%= book.author %>">
+                </div>
+            </fieldset>
    
-        <div class="form-group mb-4">
+        <!-- <div class="form-group mb-4">
             <label for="title">Update title:</label><br />
             <input class="form-control" type="text" name="title" id="title" value="<%= book.title %>">
         </div>
         <div class="form-group">
             <label for="author">Update author:</label><br />
             <input class="form-control" type="text" name="author" id="author" value="<%= book.author %>">
-        </div>
+        </div> -->
+        <fieldset>
+            <legend>Rate &amp; Review</legend>
+            <div class="mb-4 form-group">
+                <label for="rating">Rating</label><br />
+                <% book.reviews.forEach(function(r) { %>
+                <p>Current rating: <%= r.rating %></p>
+                
+                <select name="rating" id="rating">
+                    <option value="1"><span class="icon">★</span></option>
+                    <option value="2"><span class="icon">★★</span></option>
+                    <option value="3"><span class="icon">★★★</span></option>
+                    <option value="4"><span class="icon">★★★★</span></option>
+                    <option value="5"><span class="icon">★★★★★</span></option>
+                </select>
+            </div>
+            <div col-xs-12 class="mb-4 form-group">
+                <label for="content">Update your review</label><br />
+                <textarea name="content" id="content" rows="10"><%= r.content %></textarea>
+            </div>
+            <%  }); %>
+            </fieldset>
             </div><!-- end card-body -->
             <div class="card-footer">
-                    <div col-xs-12>
-                        <button type="submit" class="btn btn-primary">Update Book</button>
-                    </div>
+                <div col-xs-12>
+                    <button type="submit" class="btn btn-primary">Update Book</button>
+                </div>
             </div>
             </form>
             </div><!-- end card-->

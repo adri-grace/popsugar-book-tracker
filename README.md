@@ -19,6 +19,10 @@ https://popsugar-book-tracker.herokuapp.com/
 A website for users to track what books they read for 2020 and identify which category they are in the 2020 Popsugar Book Challenge category.
 * Users can log in with Good Reads or Google oAuth login capabilities
 * Users can view existing books they've already added, add new books, check off the Popsugar Category and add ratings and reviews of the books.
+* Users can edit book title, author, rating and review.
+
+#### Icebox
+* Allow users to updated category.
 
 ### User Stories
 * A user who enjoys reading and would like to participate in the 2020 Popsugar Book Challenge.
