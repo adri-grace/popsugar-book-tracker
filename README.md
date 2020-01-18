@@ -8,8 +8,9 @@ Web page for GA Project Two:
 – CSS
 – Javascript
 – Bootstrap
-– Oauth API
-– Express
+– Oauth API (Google and Goodreads)
+– Express, Express Sessions
+– EJS
 – Passport
 
 ### Project Overview
