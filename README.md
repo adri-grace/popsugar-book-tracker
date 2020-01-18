@@ -26,7 +26,7 @@ A website for users to track what books they read for 2020 and identify which ca
 
 #### Screen Captures
 ![Popsugar landing page](/public/screen-captures/PS-landing-pg.png?raw=true "Popsugar Landing Page")
-![Popsugar landing page](/public/screen-captures/PS-logged-in.png?raw=true "Popsugar Landing Page")
-![Popsugar landing page](/public/screen-captures/PS-dropdown?raw=true "Popsugar Landing Page")
-![Popsugar landing page](/public/screen-captures/PS-add-book.png?raw=true "Popsugar Landing Page")
-![Popsugar landing page](/public/screen-captures/PS-edit-book.png?raw=true "Popsugar Landing Page")
+![Popsugar landing page](/public/screen-captures/PS-logged-in.png?raw=true "Popsugar Logged in")
+![Popsugar landing page](/public/screen-captures/PS-dropdown.png?raw=true "Popsugar Dropdown Menu")
+![Popsugar landing page](/public/screen-captures/PS-add-book.png?raw=true "Popsugar Add Book")
+![Popsugar landing page](/public/screen-captures/PS-edit-book.png?raw=true "Popsugar Edit Book")
