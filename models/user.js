@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new mongoose.Schema({
     displayName: String,
-    goodreadsId: String,
+    goodreadsId: String, // add || googleId: string ? 
     book: [{ type: Schema.Types.ObjectId, ref: 'Book' }]
 }, {
     timestamps: true

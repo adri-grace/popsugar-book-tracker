@@ -15,7 +15,7 @@ router.get('/auth/goodreads/callback',
         res.redirect('/books');
     });
 router.get('/logout', function (req, res) {
-    req.logout();
+    req.logOut();
     res.redirect('/');
 });
 

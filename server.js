@@ -30,7 +30,7 @@ app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({ 
-    secret: 'cKDob5XDH5IazBR1U2Az1rRE6bn75gIMNhxL7gY', 
+    secret: 'cKDob5XDH5IazBR1U2Az1rRE6bn75gIMNhxL7gY', //this gets encoded before it's sent
     key: 'YBrkVG1vL9Te8NywecFtjQ', 
     cookie: { secure: false },
     resave: true,

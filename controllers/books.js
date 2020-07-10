@@ -20,7 +20,7 @@ function update(req, res) {
                 book.reviews[0].content = req.body.content;
                 book.category.genre = req.body.category;
                 console.log(req.body);
-              console.log(book.category._id);
+                console.log(book.category._id);
                 book.save(function(err, book) {
                     res.redirect('/books');
                 })
@@ -43,8 +43,10 @@ function deleteBook(req, res) {
 function index(req, res) {
     User.findById(req.user._id, function (err, user) {
         Book.find({ '_id': { $in: user.book } }).populate('category').exec(function (err, books) {
-            res.render('books/index', { title: 'My books', user: req.user, books });
-        })
+            res.render('books/index', { 
+                title: 'My books', 
+                user: req.user, books });
+        });
     });
 }
 
@@ -80,6 +82,6 @@ function create (req, res) {
                     });
                 });
             }
-        })
+        });
     });
 }

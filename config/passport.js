@@ -21,7 +21,7 @@ passport.use(new GoodreadsStrategy({
                 newUser.save(function (err) {
                     if (err) return done(err);
                     return done(null, newUser);
-                })
+                });
             }
         });
         console.log(profile);
@@ -41,12 +41,12 @@ passport.use(new GoogleStrategy({
             } else {
                 const newUser = new User({
                     displayName: profile.displayName,
-                    googleId: profile.id,
+                    googleId: profile.id, // should this be goodreadsId: profile.id to match the model?
                 });
                 newUser.save(function (err) {
                     if (err) return cb(err);
                     return cb(null, newUser);
-                })
+                });
             }
         });
         console.log(profile);
@@ -54,9 +54,16 @@ passport.use(new GoogleStrategy({
 ));
 
 passport.serializeUser(function (user, done) {
-    done(null, user);
+    done(null, user); // should this be user.id ?
 });
 
 passport.deserializeUser(function (obj, done) {
     done(null, obj);
 });
+
+// ^^ could this be ?
+// passport.deserializeUser(function(id, done) {
+//    User.findById(id, function(err, user) {
+//       done(err, user);
+//    });
+// });
