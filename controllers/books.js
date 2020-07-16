@@ -18,9 +18,9 @@ function update(req, res) {
     book.author = req.body.author;
     book.reviews[0].rating = req.body.rating;
     book.reviews[0].content = req.body.content;
-    book.category.genre = req.body.category.genre;
+    book.category.genre = req.body.category;
     console.log(req.body);
-    console.log(book.category._id);
+    console.log(book.category);
     book.save(function (err, book) {
       res.redirect("/books");
     });
